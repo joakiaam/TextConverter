@@ -1,12 +1,14 @@
+package replacetext;
+
 /**
- * The ReplaceFirstTextCommand class extends the ReplaceTextCommand class
+ * The replacetext.ReplaceFirstTextCommand class extends the replacetext.ReplaceTextCommand class
  * and provides functionality to replace the first occurrence of a target
  * string with a replacement string in a given text.
  */
 public class ReplaceFirstTextCommand extends ReplaceTextCommand {
 
   /**
-   * Constructs a new ReplaceFirstTextCommand with the specified target and replacement strings.
+   * Constructs a new replacetext.ReplaceFirstTextCommand with the specified target and replacement strings.
    *
    * @param target the string to be replaced
    * @param replacement the string to replace the target with

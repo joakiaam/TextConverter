@@ -1,5 +1,9 @@
+package wraptext;
+
+import utility.TextCommand;
+
 /**
- * The WrapTextCommand class implements the TextCommand interface and is used to wrap a given text
+ * The wraptext.WrapTextCommand class implements the utility.TextCommand interface and is used to wrap a given text
  * with specified opening and ending strings.
  */
 public class WrapTextCommand implements TextCommand {
@@ -7,7 +11,7 @@ public class WrapTextCommand implements TextCommand {
   protected String end;
 
   /**
-   * Constructs a new WrapTextCommand with the specified opening and ending strings.
+   * Constructs a new wraptext.WrapTextCommand with the specified opening and ending strings.
    *
    * @param opening the string to be added at the beginning of the text
    * @param end the string to be added at the end of the text

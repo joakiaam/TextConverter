@@ -1,5 +1,9 @@
+package replacetext;
+
+import utility.TextCommand;
+
 /**
- * The ReplaceTextCommand class implements the TextCommand interface
+ * The replacetext.ReplaceTextCommand class implements the utility.TextCommand interface
  * and provides functionality to replace occurrences of a target string
  * with a replacement string in a given text.
  */
@@ -8,7 +12,7 @@ public class ReplaceTextCommand implements TextCommand {
   protected String replacement;
 
   /**
-   * Constructs a ReplaceTextCommand with the specified target and replacement strings.
+   * Constructs a replacetext.ReplaceTextCommand with the specified target and replacement strings.
    *
    * @param target the string to be replaced
    * @param replacement the string to replace the target with
