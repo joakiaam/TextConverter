@@ -1,5 +1,6 @@
 import replacetext.ReplaceFirstTextCommand;
 import replacetext.ReplaceTextCommand;
+import wraptext.WrapLinesTextCommand;
 import wraptext.WrapTextCommand;
 
 public class Main {
@@ -18,11 +19,20 @@ public class Main {
     System.out.println(replaceFirst);
     System.out.println(" ");
 
+    // Wrap the enitre text
+    System.out.println("##### Wrap the text #####");
     String wrapped = new WrapTextCommand("#", "#")
         .execute("text to be wrapped");
 
-    System.out.println("##### Wrap the text #####");
     System.out.println(wrapped);
     System.out.println(" ");
+
+
+    // Wrap each line in text
+    System.out.println("##### Wrap each line #####");
+    String lineWrapped = new WrapLinesTextCommand("<p>", "</p>")
+        .execute("1. This is the first line.\n2. This is the second line.\n3. This is the third line.");
+
+    System.out.println(lineWrapped);
   }
 }
