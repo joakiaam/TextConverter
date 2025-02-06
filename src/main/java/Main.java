@@ -1,6 +1,7 @@
 import replacetext.ReplaceFirstTextCommand;
 import replacetext.ReplaceTextCommand;
 import wraptext.WrapLinesTextCommand;
+import wraptext.WrapSelectionTextCommand;
 import wraptext.WrapTextCommand;
 
 public class Main {
@@ -34,5 +35,12 @@ public class Main {
         .execute("1. This is the first line.\n2. This is the second line.\n3. This is the third line.");
 
     System.out.println(lineWrapped);
+    System.out.println(" ");
+
+    // Wrap selection
+    System.out.println("##### Wrap selection #####");
+    String selectionWrap = new WrapSelectionTextCommand("<p>", "</p>", "selection")
+        .execute("text with selection, it also has another selection");
+    System.out.println(selectionWrap);
   }
 }
