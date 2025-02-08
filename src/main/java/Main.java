@@ -22,7 +22,7 @@ public class Main {
     System.out.println(replaceFirst);
     System.out.println(" ");
 
-    // Wrap the enitre text
+    // Wrap the entire text
     System.out.println("##### Wrap the text #####");
     String wrapped = new WrapTextCommand("#", "#")
         .execute("text to be wrapped");
