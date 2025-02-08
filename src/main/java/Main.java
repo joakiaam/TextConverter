@@ -1,3 +1,5 @@
+import capitalizetext.CapitalizeTextCommand;
+import capitalizetext.CapitalizeWordsTextCommand;
 import replacetext.ReplaceFirstTextCommand;
 import replacetext.ReplaceTextCommand;
 import wraptext.WrapLinesTextCommand;
@@ -42,5 +44,20 @@ public class Main {
     String selectionWrap = new WrapSelectionTextCommand("<p>", "</p>", "selection")
         .execute("text with selection, it also has another selection");
     System.out.println(selectionWrap);
+    System.out.println(" ");
+
+    // Capitalize entire text
+    System.out.println("##### Capitalize all text #####");
+    String capitalizeEntireText = new CapitalizeTextCommand()
+        .execute("this should be uppercase");
+    System.out.println(capitalizeEntireText);
+    System.out.println(" ");
+
+    // Capitalize each word
+    System.out.println("##### Capitalize first letter of each word #####");
+    String capitalizeEachWord = new CapitalizeWordsTextCommand()
+        .execute("first letter of the word should be capitalized");
+    System.out.println(capitalizeEachWord);
+    System.out.println(" ");
   }
 }
