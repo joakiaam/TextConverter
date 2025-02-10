@@ -3,9 +3,11 @@ import capitalizetext.CapitalizeTextCommand;
 import capitalizetext.CapitalizeWordsTextCommand;
 import replacetext.ReplaceFirstTextCommand;
 import replacetext.ReplaceTextCommand;
+import utility.Script;
 import wraptext.WrapLinesTextCommand;
 import wraptext.WrapSelectionTextCommand;
 import wraptext.WrapTextCommand;
+import java.util.List;
 
 public class Main {
   public static void main(String[] args) {
@@ -34,14 +36,14 @@ public class Main {
     // Wrap each line in text
     System.out.println("##### Wrap each line #####");
     String lineWrapped = new WrapLinesTextCommand("<p>", "</p>")
-        .execute("1. This is the first line.\n2. This is the second line.\n3. This is the third line.");
+        .execute("1. This is the first line.\n2. This is the second line.\n");
     System.out.println(lineWrapped);
     System.out.println(" ");
 
     // Wrap selection
     System.out.println("##### Wrap selection #####");
     String selectionWrap = new WrapSelectionTextCommand("<p>", "</p>", "selection")
-        .execute("text with selection, it also has another selection");
+        .execute("Text with selection, it also has another selection");
     System.out.println(selectionWrap);
     System.out.println(" ");
 
@@ -64,5 +66,13 @@ public class Main {
     String capitalizeSelection = new CapitalizeSelectionTextCommand("selection")
         .execute("Only the selection should be capitalized, but also this selection");
     System.out.println(capitalizeSelection);
+    System.out.println(" ");
+
+    // Script
+    System.out.println("##### Script #####");
+    String scriptOutput = new Script(List.of(new CapitalizeSelectionTextCommand("selection"),
+        new WrapLinesTextCommand("<p>", "</p>")))
+        .execute("A text with a selection.\nAnd a new line that also has a selection.");
+    System.out.println(scriptOutput);
   }
 }
