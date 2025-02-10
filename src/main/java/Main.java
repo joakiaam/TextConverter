@@ -1,3 +1,4 @@
+import capitalizetext.CapitalizeSelectionTextCommand;
 import capitalizetext.CapitalizeTextCommand;
 import capitalizetext.CapitalizeWordsTextCommand;
 import replacetext.ReplaceFirstTextCommand;
@@ -59,5 +60,11 @@ public class Main {
         .execute("first letter of the word should be capitalized");
     System.out.println(capitalizeEachWord);
     System.out.println(" ");
+
+    // Capitalize text selection
+    System.out.println("##### Capitalize a selection of the text #####");
+    String capitalizeSelection = new CapitalizeSelectionTextCommand("selection")
+        .execute("Only the selection should be capitalized, but also this selection");
+    System.out.println(capitalizeSelection);
   }
 }
