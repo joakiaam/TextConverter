@@ -6,7 +6,6 @@ package capitalizetext;
  */
 public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
   private String selection;
-  private String nyText = "";
 
   /**
    * Constructs a new `CapitalizeSelectionTextCommand` with the specified selection.
@@ -26,12 +25,14 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
   @Override
   public String execute(String text) {
     String[] parts = text.split(getSelection());
+    StringBuilder capitalizedSelectionBuilder = new StringBuilder();
 
     for (String part : parts) {
-      nyText += part + getSelection().toUpperCase();
+      capitalizedSelectionBuilder.append(part).append(getSelection().toUpperCase());
     }
-    return nyText;
-  }
+
+    return capitalizedSelectionBuilder.toString();
+}
 
   /**
    * Gets the text selection to be capitalized.

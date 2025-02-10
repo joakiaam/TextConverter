@@ -6,7 +6,6 @@ package wraptext;
  */
 public class WrapSelectionTextCommand extends WrapTextCommand {
   private String selection;
-  private String nyText = "";
 
   /**
    * Constructs a new `WrapSelectionTextCommand` with the specified opening, ending strings, and selection.
@@ -29,11 +28,12 @@ public class WrapSelectionTextCommand extends WrapTextCommand {
   @Override
   public String execute(String text) {
     String[] parts = text.split(getSelection());
+    StringBuilder wrappedSelectionBuilder = new StringBuilder();
 
     for (String part : parts) {
-      nyText += part + getOpening() + getSelection() + getEnd();
+      wrappedSelectionBuilder.append(part).append(getOpening()).append(getSelection()).append(getEnd());
     }
-    return nyText;
+    return wrappedSelectionBuilder.toString();
   }
 
   /**

@@ -5,7 +5,6 @@ package wraptext;
  * with the specified opening and ending strings.
  */
 public class WrapLinesTextCommand extends WrapTextCommand {
-  private String nyText = "";
 
   /**
    * Constructs a new `WrapLinesTextCommand` with the specified opening and ending strings.
@@ -26,10 +25,11 @@ public class WrapLinesTextCommand extends WrapTextCommand {
   @Override
   public String execute(String text) {
     String[] parts = text.split("\n");
+    StringBuilder wrappedLinesBuilder = new StringBuilder();
 
     for (String part : parts) {
-      nyText += getOpening() + part + getEnd() + "\n";
+      wrappedLinesBuilder.append(getOpening()).append(part).append(getEnd()).append("\n");
     }
-    return nyText;
+    return wrappedLinesBuilder.toString();
   }
 }
