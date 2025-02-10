@@ -14,7 +14,6 @@ public class WrapLinesTextCommand extends WrapTextCommand {
     for (String part : parts) {
       nyText += getOpening() + part + getEnd() + "\n";
     }
-    text = nyText;
-    return text;
+    return nyText;
   }
 }
