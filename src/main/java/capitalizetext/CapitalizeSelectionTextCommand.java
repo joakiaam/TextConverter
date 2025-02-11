@@ -24,15 +24,18 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
    */
   @Override
   public String execute(String text) {
-    String[] parts = text.split(getSelection());
+    String[] parts = text.split(getSelection(), -1);
     StringBuilder capitalizedSelectionBuilder = new StringBuilder();
 
-    for (String part : parts) {
-      capitalizedSelectionBuilder.append(part).append(getSelection().toUpperCase());
+    for (int i = 0; i < parts.length; i++) {
+      capitalizedSelectionBuilder.append(parts[i]);
+      if (i < parts.length - 1) {
+        capitalizedSelectionBuilder.append(getSelection().substring(0, 1).toUpperCase())
+            .append(getSelection().substring(1));
+      }
     }
-
-    return capitalizedSelectionBuilder.toString();
-}
+  return capitalizedSelectionBuilder.toString();
+  }
 
   /**
    * Gets the text selection to be capitalized.
