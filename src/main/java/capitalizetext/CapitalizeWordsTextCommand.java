@@ -21,6 +21,6 @@ public class CapitalizeWordsTextCommand extends CapitalizeTextCommand {
       capitalizedWordsBuilder.append(word.substring(0, 1).toUpperCase())
           .append(word.substring(1)).append(" ");
     }
-    return capitalizedWordsBuilder.toString();
+    return capitalizedWordsBuilder.toString().trim();
   }
 }
