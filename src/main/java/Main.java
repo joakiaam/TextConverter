@@ -64,7 +64,7 @@ public class Main {
     // Capitalize text selection
     System.out.println("##### Capitalize a selection of the text #####");
     String capitalizeSelection = new CapitalizeSelectionTextCommand("selection")
-        .execute("Only the selection should be capitalized, but also this selection");
+        .execute("Only the selection should be capitalized, but also this selection and nothing more.");
     System.out.println(capitalizeSelection);
     System.out.println(" ");
 
@@ -72,7 +72,7 @@ public class Main {
     System.out.println("##### Script #####");
     String scriptOutput = new Script(List.of(new CapitalizeSelectionTextCommand("selection"),
         new WrapLinesTextCommand("<p>", "</p>")))
-        .execute("A text with a selection.\nAnd a new line that also has a selection.");
+        .execute("A text with a selection.\nAnd a new line that also has a selection and nothing more.");
     System.out.println(scriptOutput);
   }
 }
