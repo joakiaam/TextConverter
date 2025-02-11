@@ -18,7 +18,8 @@ public class CapitalizeWordsTextCommand extends CapitalizeTextCommand {
     StringBuilder capitalizedWordsBuilder = new StringBuilder();
 
     for (String word : words) {
-      capitalizedWordsBuilder.append(word.substring(0, 1).toUpperCase()).append(word.substring(1)).append(" ");
+      capitalizedWordsBuilder.append(word.substring(0, 1).toUpperCase())
+          .append(word.substring(1)).append(" ");
     }
     return capitalizedWordsBuilder.toString();
   }
