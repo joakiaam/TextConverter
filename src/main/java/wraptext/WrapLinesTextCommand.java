@@ -30,6 +30,7 @@ public class WrapLinesTextCommand extends WrapTextCommand {
     for (String part : parts) {
       wrappedLinesBuilder.append(getOpening()).append(part).append(getEnd()).append("\n");
     }
-    return wrappedLinesBuilder.toString();
+    String result = wrappedLinesBuilder.toString().trim();
+    return result;
   }
 }
