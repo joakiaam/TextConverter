@@ -33,7 +33,7 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
         capitalizedSelectionBuilder.append(super.execute(getSelection()));
       }
     }
-  return capitalizedSelectionBuilder.toString();
+    return capitalizedSelectionBuilder.toString();
   }
 
   /**
