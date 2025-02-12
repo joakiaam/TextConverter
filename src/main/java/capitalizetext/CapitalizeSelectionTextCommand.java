@@ -30,8 +30,7 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand {
     for (int i = 0; i < parts.length; i++) {
       capitalizedSelectionBuilder.append(parts[i]);
       if (i < parts.length - 1) {
-        capitalizedSelectionBuilder.append(getSelection().substring(0, 1).toUpperCase())
-            .append(getSelection().substring(1));
+        capitalizedSelectionBuilder.append(super.execute(getSelection()));
       }
     }
   return capitalizedSelectionBuilder.toString();
