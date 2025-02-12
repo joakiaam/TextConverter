@@ -31,7 +31,7 @@ public class WrapSelectionTextCommand extends WrapTextCommand {
     StringBuilder wrappedSelectionBuilder = new StringBuilder();
 
     for (String part : parts) {
-      wrappedSelectionBuilder.append(part).append(getOpening()).append(getSelection()).append(getEnd());
+      wrappedSelectionBuilder.append(part).append(super.execute(getSelection()));
     }
     return wrappedSelectionBuilder.toString();
   }

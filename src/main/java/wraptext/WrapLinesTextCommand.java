@@ -28,9 +28,8 @@ public class WrapLinesTextCommand extends WrapTextCommand {
     StringBuilder wrappedLinesBuilder = new StringBuilder();
 
     for (String part : parts) {
-      wrappedLinesBuilder.append(getOpening()).append(part).append(getEnd()).append("\n");
+      wrappedLinesBuilder.append(super.execute(part)).append("\n");
     }
-    String result = wrappedLinesBuilder.toString().trim();
-    return result;
+    return wrappedLinesBuilder.toString().trim();
   }
 }
