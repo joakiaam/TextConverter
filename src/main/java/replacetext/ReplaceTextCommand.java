@@ -18,8 +18,8 @@ public class ReplaceTextCommand implements TextCommand {
    * @param replacement the string to replace the target with
    */
   public ReplaceTextCommand(String target, String replacement) {
-    this.target = target;
-    this.replacement = replacement;
+    setTarget(target);
+    setReplacement(replacement);
   }
 
   /**
@@ -41,6 +41,32 @@ public class ReplaceTextCommand implements TextCommand {
   public String getTarget() {
     return target;
   }
+
+/**
+ * Sets the target string to be replaced.
+ *
+ * @param target the string to be replaced
+ * @throws IllegalArgumentException if the target is null or empty
+ */
+public void setTarget(String target) {
+  if (target == null || target.isEmpty()) {
+    throw new IllegalArgumentException("NULL");
+  }
+  this.target = target;
+}
+
+/**
+ * Sets the replacement string.
+ *
+ * @param replacement the string to replace the target with
+ * @throws IllegalArgumentException if the replacement is null or empty
+ */
+public void setReplacement(String replacement) {
+  if (replacement == null || replacement.isEmpty()) {
+    throw new IllegalArgumentException("NULL");
+  }
+  this.replacement = replacement;
+}
 
   /**
    * Returns the replacement string.
